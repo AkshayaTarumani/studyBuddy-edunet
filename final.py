@@ -8,7 +8,9 @@ from google import genai
 
 # ---------------- API SETUP ----------------
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+api_key = st.secrets["GEMINI_API_KEY"]
+
+client = genai.Client(api_key=api_key)
 
 # ---------------- PDF FUNCTION ----------------
 def extract_text(file):
